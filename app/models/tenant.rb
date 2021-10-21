@@ -1,7 +1,7 @@
 class Tenant < ApplicationRecord
     validates :name, presence: true
-    validates :age, length: {minimum: 20}
-    
+    validates :age, numericality: {minimum: 18}
+
     has_many :leases
     has_many :apartments, through: :leases
 end
